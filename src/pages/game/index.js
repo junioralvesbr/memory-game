@@ -11,8 +11,10 @@ $cardsWrapper.insertAdjacentHTML("beforeend", createMemoryCard());
 $cardsWrapper.insertAdjacentHTML("beforeend", createMemoryCard());
 $cardsWrapper.insertAdjacentHTML("beforeend", createMemoryCard());
 $cardsWrapper.insertAdjacentHTML("beforeend", createMemoryCard());
-$cardsWrapper.insertAdjacentHTML('beforeend', createMemoryCardFront());
-$cardsWrapper.insertAdjacentHTML('beforeend', createMemoryCardFront());
+$cardsWrapper.insertAdjacentHTML("beforeend", createMemoryCard('front'));
+$cardsWrapper.insertAdjacentHTML("beforeend", createMemoryCard('front'));
+
+
 // $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
 // $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
 // $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);

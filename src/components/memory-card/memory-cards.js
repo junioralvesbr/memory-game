@@ -1,15 +1,6 @@
-const createMemoryCard = () => (`
-        <article class="memory-card">
-            <img
-                src='img/icon-collabcode.png'
-                alt='Gueio mascote da CollabCode'
-                class='icon'
-                onClick="handleClick()"
-            />
-        </article>    
-    `);
+const createMemoryCard = (front) => {
 
-const createMemoryCardFront = () => (`
+    if (front === 'front') { return (`
         <article class="memory-card -front">
             <img
                 src='img/icon-c.png'
@@ -17,8 +8,42 @@ const createMemoryCardFront = () => (`
                 class='icon'
                 onClick = "handleClick()"
             />
-        </article>
-    `);
+        </article>`)
+
+    } else { return (`
+        <article class="memory-card">
+            <img
+                src='img/icon-collabcode.png'
+                alt='Gueio mascote da CollabCode'
+                class='icon'
+                onClick="handleClick()"
+            />
+        </article>`)
+    };
+
+};
+
+// const createMemoryCard = () => (`
+//         <article class="memory-card">
+//             <img
+//                 src='img/icon-collabcode.png'
+//                 alt='Gueio mascote da CollabCode'
+//                 class='icon'
+//                 onClick="handleClick()"
+//             />
+//         </article>    
+//     `);
+
+// const createMemoryCardFront = () => (`
+//         <article class="memory-card -front">
+//             <img
+//                 src='img/icon-c.png'
+//                 alt='Icone da linguagem C++'
+//                 class='icon'
+//                 onClick = "handleClick()"
+//             />
+//         </article>
+//     `);
 
 
 function handleClick() {
