@@ -1,27 +1,16 @@
-const createMemoryCard = (front) => {
+const createMemoryCard = (src, alt, nameClass) => `
+    <article class="memory-card ${nameClass}">
+        <img
+            src="${src}"
+            alt="${alt}"
+                nameClass === '-front' ? "Icone do livro C++" : "Gueio Mascote da CollabCode"}"
+            class="icon"
+            onClick = "handleClick()"
+        />
+    </article>
+`;
 
-    if (front === 'front') { return (`
-        <article class="memory-card -front">
-            <img
-                src='img/icon-c.png'
-                alt='Icone da linguagem C++'
-                class='icon'
-                onClick = "handleClick()"
-            />
-        </article>`)
-
-    } else { return (`
-        <article class="memory-card">
-            <img
-                src='img/icon-collabcode.png'
-                alt='Gueio mascote da CollabCode'
-                class='icon'
-                onClick="handleClick()"
-            />
-        </article>`)
-    };
-
-};
+const handleClick = () => console.log('AE');
 
 // const createMemoryCard = () => (`
 //         <article class="memory-card">
@@ -46,9 +35,9 @@ const createMemoryCard = (front) => {
 //     `);
 
 
-function handleClick() {
-    console.log('testeClick');
-}
+// function handleClick() {
+//     console.log('testeClick');
+// }
 
 
 
