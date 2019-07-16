@@ -22,11 +22,13 @@ function memoryCard() {
             position: absolute;
         }
 
-        .memory-card.-active .card {
+        .memory-card.-active .card,
+        .memory-card.-score .card {
             display: none;
         }
 
-        .memory-card.-active .card.-front {
+        .memory-card.-active .card.-front,
+        .memory-card.-score .card.-front {
             display: flex;
         }
 
@@ -77,19 +79,48 @@ function memoryCard() {
 
 };
 
+let score = 0;
+
 const handleClick = $component => {
-    if (qtdActiveMemoryCard < 2) {
-        $component.classList.toggle('-active');
-    }
+    if (!$component.classList.contains('-active')) {
+        if (qtdActiveMemoryCard < 2) {
+            $component.classList.toggle('-active');
+        }
+        
+        console.log(qtdActiveMemoryCard);
 
-    if (qtdActiveMemoryCard === 1) {
-        setTimeout(() => {
-            const $activeMemorycards = document.querySelectorAll('.memory-card.-active');
+        if (qtdActiveMemoryCard === 1) {
+    
+            const $memoryCards = document.querySelectorAll('.memory-card.-active');
+            console.log($memoryCards);
+    
+            if ($memoryCards[0].querySelector('.-front .icon').getAttribute('src') ===
+                $memoryCards[1].querySelector('.-front .icon').getAttribute('src')) {
+                
+                    score++
+                    console.log('Valor do score:', score);
 
-            $activeMemorycards.forEach(memoryCard => {
-                memoryCard.classList.remove("-active");
-            });
-            qtdActiveMemoryCard = 0;
-        }, 1500);
+                
+                    $memoryCards.forEach($memoryCard => {
+                        $memoryCard.classList.remove('-active');
+                        $memoryCard.classList.add('-score');
+                    });
+                
+            } else {
+
+                setTimeout(() => {
+                    const $activeMemorycards = document.querySelectorAll('.memory-card.-active');
+        
+                    $activeMemorycards.forEach(memoryCard => {
+                        memoryCard.classList.remove("-active");
+                    });
+
+                    qtdActiveMemoryCard = 0;
+
+                }, 1500);
+
+            }
+    
+        }
     }
 }
