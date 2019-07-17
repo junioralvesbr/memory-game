@@ -79,48 +79,44 @@ function memoryCard() {
 
 };
 
-let score = 0;
-
 const handleClick = $component => {
     if (!$component.classList.contains('-active')) {
-        if (qtdActiveMemoryCard < 2) {
-            $component.classList.toggle('-active');
-        }
-        
-        console.log(qtdActiveMemoryCard);
+        activeMemoryCard($component);
+        checkSure();
+    }
+}
 
-        if (qtdActiveMemoryCard === 1) {
-    
-            const $memoryCards = document.querySelectorAll('.memory-card.-active');
-            console.log($memoryCards);
-    
-            if ($memoryCards[0].querySelector('.-front .icon').getAttribute('src') ===
-                $memoryCards[1].querySelector('.-front .icon').getAttribute('src')) {
-                
-                    score++
-                    console.log('Valor do score:', score);
+function activeMemoryCard($component) {
+    if (qtdActiveMemoryCard < 2) {
+        $component.classList.add('-active');
+    }
+}
 
-                
-                    $memoryCards.forEach($memoryCard => {
-                        $memoryCard.classList.remove('-active');
-                        $memoryCard.classList.add('-score');
-                    });
-                
-            } else {
+function checkSure () {
+    if (qtdActiveMemoryCard === 1) {
+        const $activeMemoryCards = document.querySelectorAll('.memory-card.-active');
 
-                setTimeout(() => {
-                    const $activeMemorycards = document.querySelectorAll('.memory-card.-active');
-        
-                    $activeMemorycards.forEach(memoryCard => {
-                        memoryCard.classList.remove("-active");
-                    });
+        if ($activeMemoryCards[0].querySelector('.-front .icon').getAttribute('src') ===
+            $activeMemoryCards[1].querySelector('.-front .icon').getAttribute('src')) {
+            
+                store.score++
+                console.log('Score:', store.score);
+            
+                $activeMemoryCards.forEach($memoryCard => {
+                    $memoryCard.classList.remove('-active');
+                    $memoryCard.classList.add('-score');
+                });
+            
+        } else {
 
-                    qtdActiveMemoryCard = 0;
+            setTimeout(() => {
+                $activeMemoryCards.forEach(memoryCard => {
+                    memoryCard.classList.remove("-active");
+                });
 
-                }, 1500);
+                qtdActiveMemoryCard = 0;
 
-            }
-    
+            }, 1500);
         }
     }
 }

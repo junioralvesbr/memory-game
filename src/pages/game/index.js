@@ -1,3 +1,4 @@
+(function () {
 const $root = document.querySelector('#root');
 
 const $cardsWrapper = createCardsWrapper();
@@ -34,3 +35,5 @@ $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJava);
 $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardPHP);
 
 $root.insertAdjacentElement("beforeend", $cardsWrapper);
+
+})();
