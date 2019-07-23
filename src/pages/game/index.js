@@ -1,39 +1,41 @@
 (function () {
-const $root = document.querySelector('#root');
+    const $root = document.querySelector('#root');
 
-const $cardsWrapper = createCardsWrapper();
+    console.log("tste", memoryCard);
 
-const createMemoryCard = memoryCard();
+    const $cardsWrapper = createCardsWrapper();
 
-const $memoryCardC = createMemoryCard({
-    src: "img/icon-c.png",
-    alt: "Livro de programação C++"
-});
+    const createMemoryCard = memoryCard.create();
 
-const $memoryCardJS = createMemoryCard({
-    src: "img/icon-js.png",
-    alt: "Livro de programação JavaScript"
-});
+    const $memoryCardC = createMemoryCard({
+        src: "img/icon-c.png",
+        alt: "Livro de programação C++"
+    });
 
-const $memoryCardPHP = createMemoryCard({
-    src: "img/icon-php.png",
-    alt: "livro de programação PHP"
-});
+    const $memoryCardJS = createMemoryCard({
+        src: "img/icon-js.png",
+        alt: "Livro de programação JavaScript"
+    });
 
-const $memoryCardJava = createMemoryCard({
-    src: "img/icon-java.png",
-    alt: "livro de programação JAVA"
-});
+    const $memoryCardPHP = createMemoryCard({
+        src: "img/icon-php.png",
+        alt: "livro de programação PHP"
+    });
 
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardC);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJS);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardPHP);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJava);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJS);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardC);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJava);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardPHP);
+    const $memoryCardJava = createMemoryCard({
+        src: "img/icon-java.png",
+        alt: "livro de programação JAVA"
+    });
 
-$root.insertAdjacentElement("beforeend", $cardsWrapper);
+    $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardC);
+    $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJS);
+    $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardPHP);
+    $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJava);
+    $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJS);
+    $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardC);
+    $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJava);
+    $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardPHP);
+
+    $root.insertAdjacentElement("beforeend", $cardsWrapper);
 
 })();

@@ -1,8 +1,12 @@
-function memoryCard() {
-    const $head = document.querySelector('head');
-    const $style = document.createElement('style');
+const memoryCard = (function () {
 
-    $style.textContent = `
+    const module = {};
+
+    module.create = () => {
+        const $head = document.querySelector('head');
+        const $style = document.createElement('style');
+
+        $style.textContent = `
         .memory-card {
             width: 155px;
             height: 155px;
@@ -56,10 +60,10 @@ function memoryCard() {
         }
     `;
 
-    $head.insertBefore($style, null);
+        $head.insertBefore($style, null);
 
-    return ({nameClass, src, alt}) => `
-        <div class="memory-card" onclick="handleClick(this)">    
+        return ({ nameClass, src, alt }) => `
+        <div class="memory-card" onclick="memoryCard.handleClick(this)">    
             <article class="card -front">
                 <img
                     src="${src}"
@@ -77,46 +81,53 @@ function memoryCard() {
         </div>
     `;
 
-};
+    };
 
-const handleClick = $component => {
-    if (!$component.classList.contains('-active')) {
-        activeMemoryCard($component);
-        checkSure();
+    module.handleClick = $component => {
+        if (!$component.classList.contains('-active')) {
+            module._activeMemoryCard($component);
+            module._checkSure();
+        }
     }
-}
 
-function activeMemoryCard($component) {
-    if (qtdActiveMemoryCard < 2) {
-        $component.classList.add('-active');
+    module._activeMemoryCard = $component => {
+        if (qtdActiveMemoryCard < 2) {
+            $component.classList.add('-active');
+        }
     }
-}
 
-function checkSure () {
-    if (qtdActiveMemoryCard === 1) {
-        const $activeMemoryCards = document.querySelectorAll('.memory-card.-active');
+    module._checkSure = () => {
+        if (qtdActiveMemoryCard === 1) {
+            const $activeMemoryCards = document.querySelectorAll('.memory-card.-active');
 
-        if ($activeMemoryCards[0].querySelector('.-front .icon').getAttribute('src') ===
-            $activeMemoryCards[1].querySelector('.-front .icon').getAttribute('src')) {
-            
+            if ($activeMemoryCards[0].querySelector('.-front .icon').getAttribute('src') ===
+                $activeMemoryCards[1].querySelector('.-front .icon').getAttribute('src')) {
+
                 store.score++
                 console.log('Score:', store.score);
-            
+
                 $activeMemoryCards.forEach($memoryCard => {
                     $memoryCard.classList.remove('-active');
                     $memoryCard.classList.add('-score');
                 });
-            
-        } else {
 
-            setTimeout(() => {
-                $activeMemoryCards.forEach(memoryCard => {
-                    memoryCard.classList.remove("-active");
-                });
+            } else {
 
-                qtdActiveMemoryCard = 0;
+                setTimeout(() => {
+                    $activeMemoryCards.forEach(memoryCard => {
+                        memoryCard.classList.remove("-active");
+                    });
 
-            }, 1500);
+                    qtdActiveMemoryCard = 0;
+
+                }, 1500);
+            }
         }
     }
-}
+
+    return {
+        create: module.create,
+        handleClick: module.handleClick
+    };
+
+})();
