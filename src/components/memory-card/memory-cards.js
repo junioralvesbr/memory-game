@@ -99,12 +99,13 @@ const memoryCard = (function () {
     module._checkSure = () => {
         if (qtdActiveMemoryCard === 1) {
             const $activeMemoryCards = document.querySelectorAll('.memory-card.-active');
+            const $pointBarNumber = document.querySelector('.point-bar > .number');
 
             if ($activeMemoryCards[0].querySelector('.-front .icon').getAttribute('src') ===
                 $activeMemoryCards[1].querySelector('.-front .icon').getAttribute('src')) {
 
-                store.score++
-                console.log('Score:', store.score);
+                store.score++;
+                $pointBarNumber.innerHTML = store.score;
 
                 $activeMemoryCards.forEach($memoryCard => {
                     $memoryCard.classList.remove('-active');

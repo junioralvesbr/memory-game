@@ -9,6 +9,7 @@ function createCardsWrapper() {
     const $style = document.createElement('style');
     $style.textContent = `
         .cards-wrapper {
+            position: relative;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
@@ -23,9 +24,9 @@ function createCardsWrapper() {
 
     $head.insertBefore($style, null);
 
-   $cardsWrapper.addEventListener('click', () => {
+    $cardsWrapper.addEventListener('click', () => {
         qtdActiveMemoryCard = $cardsWrapper.querySelectorAll(".memory-card.-active").length;
-   })
+    })
 
     return $cardsWrapper;
 }
