@@ -1,7 +1,7 @@
 (function () {
     const $root = document.querySelector('#root');
 
-    console.log("tste", memoryCard);
+    const $pointBar = pointBar.create();
 
     const $cardsWrapper = createCardsWrapper();
 
@@ -11,17 +11,14 @@
         src: "img/icon-c.png",
         alt: "Livro de programação C++"
     });
-
     const $memoryCardJS = createMemoryCard({
         src: "img/icon-js.png",
         alt: "Livro de programação JavaScript"
     });
-
     const $memoryCardPHP = createMemoryCard({
         src: "img/icon-php.png",
         alt: "livro de programação PHP"
     });
-
     const $memoryCardJava = createMemoryCard({
         src: "img/icon-java.png",
         alt: "livro de programação JAVA"
@@ -37,5 +34,6 @@
     $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardPHP);
 
     $root.insertAdjacentElement("beforeend", $cardsWrapper);
+    $root.insertAdjacentHTML("afterbegin", $pointBar);
 
 })();
