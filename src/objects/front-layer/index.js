@@ -6,8 +6,7 @@ const frontLayer = (function () {
         const $style = document.createElement('style');
 
         $style.textContent = `
-            .front-layer.-active {
-                display: block;
+            .front-layer {
                 height: 100%;
                 width: 100%;
                 position: absolute;
@@ -16,8 +15,10 @@ const frontLayer = (function () {
                 opacity: 0.8;
             }
 
-            .front-layer {
-                display: none;
+            .front-layer.-inactive {
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 1.5s linear;
             }
 
         `;
@@ -29,7 +30,7 @@ const frontLayer = (function () {
     module.render = () => {
         module._style();
         return `
-            <div class="front-layer -active"></div>
+            <div class="front-layer"></div>
         `
     }
 

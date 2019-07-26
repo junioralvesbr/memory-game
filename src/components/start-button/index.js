@@ -6,8 +6,7 @@ const gameButton = (function () {
         const $style = document.createElement("style");
 
         $style.textContent = `
-            .game-button.-active {
-                display: block;
+            .game-button {
                 width: 100px;
                 height: 100px;
                 border-radius: 50%;
@@ -23,10 +22,13 @@ const gameButton = (function () {
                 font-size: 1.05em;
                 box-shadow: 0px 4px 8px #3a4042;
                 cursor: pointer;
+                opacity: 1;
             }
 
-            .game-button {
-                display: none;
+            .game-button.-inactive {
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 1s 1s linear;
             }
         `
 
@@ -37,15 +39,15 @@ const gameButton = (function () {
         module._style();
 
         return `
-            <button class="game-button -active" onclick="gameButton.handleClick()">Start</button>
+            <button class="game-button" onclick="gameButton.handleClick()">Start</button>
         `
     }
 
     module.handleClick = () => {
-        const $startButton = document.querySelector('.game-button.-active');
-        const $frontLayer = document.querySelector('.front-layer.-active');
-        $startButton.classList.remove('-active');
-        $frontLayer.classList.remove('-active');
+        const $startButton = document.querySelector('.game-button');
+        const $frontLayer = document.querySelector('.front-layer');
+        $startButton.classList.add('-inactive');
+        $frontLayer.classList.add('-inactive');
     }
 
     return {
