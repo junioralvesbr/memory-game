@@ -9,11 +9,10 @@ function createCardsWrapper() {
     const $style = document.createElement('style');
     $style.textContent = `
         .cards-wrapper {
-            position: relative;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
-            padding: 10px;
+            padding: 10px 0;
             width: 100vw;
         }
         
