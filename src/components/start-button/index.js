@@ -6,7 +6,8 @@ const gameButton = (function () {
         const $style = document.createElement("style");
 
         $style.textContent = `
-            .game-button {
+            .game-button.-active {
+                display: block;
                 width: 100px;
                 height: 100px;
                 border-radius: 50%;
@@ -23,6 +24,10 @@ const gameButton = (function () {
                 box-shadow: 0px 4px 8px #3a4042;
                 cursor: pointer;
             }
+
+            .game-button {
+                display: none;
+            }
         `
 
         $head.insertBefore($style, null);
@@ -32,12 +37,20 @@ const gameButton = (function () {
         module._style();
 
         return `
-            <button class="game-button">Start</button>
+            <button class="game-button -active" onclick="gameButton.handleClick()">Start</button>
         `
+    }
+
+    module.handleClick = () => {
+        const $startButton = document.querySelector('.game-button.-active');
+        const $frontLayer = document.querySelector('.front-layer.-active');
+        $startButton.classList.remove('-active');
+        $frontLayer.classList.remove('-active');
     }
 
     return {
         render: module.render,
+        handleClick: module.handleClick
     }
 
 })();
