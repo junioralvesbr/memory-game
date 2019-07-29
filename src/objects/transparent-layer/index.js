@@ -1,4 +1,4 @@
-const frontLayer = (function () {
+const transparentLayer = (function () {
     const module = {};
 
     module._style = () => {
@@ -6,21 +6,19 @@ const frontLayer = (function () {
         const $style = document.createElement('style');
 
         $style.textContent = `
-            .front-layer {
-                height: 100%;
-                width: 100%;
+            .transparent-layer {
                 position: absolute;
+                height: 100vh;
+                width: 100vw;
                 top: 0;
-                background-color: #3a4042;
-                opacity: 0.8;
+                background-color: rgba(58, 64, 66, 0.5);
             }
 
-            .front-layer.-inactive {
+            .transparent-layer.-inactive {
                 opacity: 0;
                 pointer-events: none;
                 transition: opacity 1.5s linear;
             }
-
         `;
 
         $head.insertBefore($style, null);
@@ -29,10 +27,11 @@ const frontLayer = (function () {
 
     module.render = () => {
         module._style();
+
         return `
-            <div class="front-layer"></div>
-        `
-    }
+            <div class="transparent-layer"></div>
+        `;
+    };
 
     return {
         render: module.render

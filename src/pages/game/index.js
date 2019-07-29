@@ -3,10 +3,10 @@
 
     const $pointBar = pointBar.create();
     const $cardsWrapper = createCardsWrapper();
-    const $gameButton = gameButton.render();
-    const $frontLayer = frontLayer.render();
+    const $layerStart = layerStart.render("Vai");
 
     const createMemoryCard = memoryCard.create();
+
     const $memoryCardC = createMemoryCard({
         src: "img/icon-c.png",
         alt: "Livro de programação C++"
@@ -35,7 +35,6 @@
 
     $root.insertAdjacentElement("beforeend", $cardsWrapper);
     $root.insertAdjacentHTML("afterbegin", $pointBar);
-    $root.insertAdjacentHTML("beforeend", $frontLayer);
-    $root.insertAdjacentHTML("beforeend", $gameButton);
+    $root.insertAdjacentHTML("beforeend", $layerStart);
 
 })();

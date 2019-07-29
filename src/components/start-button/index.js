@@ -35,20 +35,22 @@ const gameButton = (function () {
         $head.insertBefore($style, null);
     }
 
-    module.render = () => {
+    module.handleClick = () => {
+        const $startButton = document.querySelector('.game-button');
+        const $transparentLayer = document.querySelector('.transparent-layer');
+        $startButton.classList.add('-inactive');
+        $transparentLayer.classList.add('-inactive');
+    }
+
+    module.render = content => {
         module._style();
 
         return `
-            <button class="game-button" onclick="gameButton.handleClick()">Start</button>
-        `
+            <button class="game-button">${content}</button>
+        `;
     }
 
-    module.handleClick = () => {
-        const $startButton = document.querySelector('.game-button');
-        const $frontLayer = document.querySelector('.front-layer');
-        $startButton.classList.add('-inactive');
-        $frontLayer.classList.add('-inactive');
-    }
+
 
     return {
         render: module.render,
