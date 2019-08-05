@@ -1,8 +1,11 @@
 (function () {
     const $root = document.querySelector('#root');
 
+    // Cria a barra de pontos com o metodo create
     const $pointBar = pointBar.create();
     const $cardsWrapper = createCardsWrapper();
+
+    // cria o layer e o botão chmando o laye Start com o metodo render.
     const $layerStart = layerStart.render("Vai");
 
     const createMemoryCard = memoryCard.create();

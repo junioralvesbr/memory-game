@@ -12,12 +12,12 @@ const transparentLayer = (function () {
                 width: 100vw;
                 top: 0;
                 background-color: rgba(58, 64, 66, 0.5);
+                transition: opacity 300ms 200ms linear; /* Propriedade, tempo da animação, dalay do inicio da animação, tipo da animação */
             }
 
-            .transparent-layer.-inactive {
+            .transparent-layer.-disable {
                 opacity: 0;
                 pointer-events: none;
-                transition: opacity 1.5s linear;
             }
         `;
 

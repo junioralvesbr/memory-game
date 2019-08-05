@@ -22,24 +22,16 @@ const gameButton = (function () {
                 font-size: 1.05em;
                 box-shadow: 0px 4px 8px #3a4042;
                 cursor: pointer;
-                opacity: 1;
+                transition: opacity 200ms linear
             }
 
-            .game-button.-inactive {
+            .game-button.-disable {
                 opacity: 0;
                 pointer-events: none;
-                transition: opacity 1s 1s linear;
             }
         `
 
         $head.insertBefore($style, null);
-    }
-
-    module.handleClick = () => {
-        const $startButton = document.querySelector('.game-button');
-        const $transparentLayer = document.querySelector('.transparent-layer');
-        $startButton.classList.add('-inactive');
-        $transparentLayer.classList.add('-inactive');
     }
 
     module.render = content => {
@@ -54,7 +46,6 @@ const gameButton = (function () {
 
     return {
         render: module.render,
-        handleClick: module.handleClick
     }
 
 })();
