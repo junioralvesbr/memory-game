@@ -2,11 +2,10 @@
     const $root = document.querySelector('#root');
     console.log($root);
 
-    const $flatButtonLogin = flatButton.render("login");
-    const $flatButtonsignup = flatButton.render("signup", "-active")
+    const $loginButton = flatButton.render("log in");
+    const $signupButton = flatButton.render("sign up", true)
 
-    $root.insertAdjacentHTML("beforeend", $flatButtonLogin);
-    $root.insertAdjacentHTML("beforeend", $flatButtonsignup);
-
+    $root.insertAdjacentHTML("beforeend", $loginButton);
+    $root.insertAdjacentHTML("beforeend", $signupButton);
 
 })();
