@@ -10,7 +10,7 @@ const flatButton = (function () {
             .flat-button {
                 width: 186px;
                 height: 176px;
-                background-color: #f25a70;
+                background-color: #eae6da;
                 border: none;
                 font-size: 24px;
                 font-weight: bold;
@@ -18,15 +18,20 @@ const flatButton = (function () {
                 text-decoration: none;
                 text-transform: uppercase;
             }
+
+            .flat-button.-active {
+                background-color: #f25a70;
+                color: #fff;
+            }
         `
 
         $head.insertBefore($style, null);
     }
 
-    module.render = content => {
+    module.render = (content, styleClass) => {
         module._style();
 
-        return `<button class="flat-button">${content}</button>`;
+        return `<button class="flat-button ${styleClass}">${content}</button>`;
     };
 
     return {
