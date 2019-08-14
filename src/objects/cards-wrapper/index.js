@@ -7,6 +7,7 @@ function createCardsWrapper() {
 
     const $head = document.querySelector('head');
     const $style = document.createElement('style');
+
     $style.textContent = `
         .cards-wrapper {
             display: flex;

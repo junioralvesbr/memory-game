@@ -7,7 +7,7 @@ const iconCollabCode = (function () {
         const $style = document.createElement('style');
 
         $style.textContent = `
-            .bkpLogo {
+            .icon-collabCode {
                 width: 252px;
                 height: 252px;
                 background-color: #fff;
@@ -29,7 +29,7 @@ const iconCollabCode = (function () {
         module._style();
 
         return `
-            <div class="bkpLogo">
+            <div class="icon-collabCode">
                 <img src="img/icon-collabcode.png" class="icon" alt="Icon CollabCode">
             </div>
         `;
