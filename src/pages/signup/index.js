@@ -1,15 +1,16 @@
 (function () {
     const $root = document.querySelector('#root');
-    console.log($root);
 
     const $loginButton = flatButton.render("log in");
-    const $signupButton = flatButton.render("sign up", true)
-    const $iconCollabCode = iconCollabCode.render();
+    const $signupButton = flatButton.render("sign up", true);
 
+    const $logoCollabcode = logoCollabcode.render();
+    const $titleCollabcode = titleCollabcode.render("Welcome!");
+
+    const $logoWrapper = logoWrapper.render($logoCollabcode, $titleCollabcode);
 
     $root.insertAdjacentHTML("beforeend", $loginButton);
     $root.insertAdjacentHTML("beforeend", $signupButton);
-    $root.insertAdjacentHTML("beforeend", $iconCollabCode);
-    $root.insertAdjacentHTML("beforeend", $titlePage);
+    $root.insertAdjacentHTML("beforeend", $logoWrapper);
 
 })();

@@ -1,4 +1,4 @@
-const titlePage = (function () {
+const logoWrapper = (function () {
 
     const module = {};
 
@@ -7,24 +7,27 @@ const titlePage = (function () {
         const $style = document.createElement('style');
 
         $style.textContent = `
-            .title-page {
-                font-size: 24px;
-                color: #f25a70;
+            .logo-wrapper {
                 text-align: center;
+                transform: translateY(-25%);
             }
         `;
 
         $head.insertBefore($style, null);
     }
 
-    module.render = content => {
+    module.render = (...$children) => {
         module._style();
 
-        return `<h1 class="title-page">${content}</h1>`;
+        return `
+            <div class="logo-wrapper">
+                ${$children.join("")}
+            </div>
+        `;
     };
 
     return {
         render: module.render
-    };
+    }
 
 })();
