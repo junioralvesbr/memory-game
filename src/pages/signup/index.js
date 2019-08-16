@@ -5,7 +5,6 @@
     const $loginButton = flatButton.render("log in");
     const $signupButton = flatButton.render("sign up", true)
     const $iconCollabCode = iconCollabCode.render();
-    const $titlePage = titlePage.render("Bem vindo");
 
 
     $root.insertAdjacentHTML("beforeend", $loginButton);

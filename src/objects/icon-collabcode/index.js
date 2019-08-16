@@ -7,11 +7,17 @@ const iconCollabCode = (function () {
         const $style = document.createElement('style');
 
         $style.textContent = `
+            .icon-wrapper {
+                position: relative;
+                top: -70px;
+            }
+
             .icon-collabCode {
                 width: 252px;
                 height: 252px;
                 background-color: #fff;
                 border-radius: 50%;
+                margin: 0 auto;
             }
 
             .icon {
@@ -26,12 +32,17 @@ const iconCollabCode = (function () {
     }
 
     module.render = () => {
+        const $titlePage = titlePage.render("Bem Vindo");
         module._style();
 
         return `
-            <div class="icon-collabCode">
-                <img src="img/icon-collabcode.png" class="icon" alt="Icon CollabCode">
+            <div class=icon-wrapper>
+                <div class="icon-collabCode">
+                    <img src="img/icon-collabcode.png" class="icon" alt="Icon CollabCode">
+                </div>
+                ${$titlePage}
             </div>
+            <div>teste</div>
         `;
     };
 
