@@ -13,15 +13,20 @@ const flatButton = (function () {
 
         $style.textContent = `
             .flat-button-${module._id} {
+                position: relative;
                 background-color: ${active ? "#f25a70" : "#eae6da"};
                 color: ${active ? "#fff" : "#fffcee"};
-                width: 186px;
+                width: 50%;
                 height: 176px;
-                border: none;
                 font-size: 24px;
                 font-weight: bold;
-                text-decoration: none;
                 text-transform: uppercase;
+            }
+
+            .flat-button-${module._id} > .text {
+                position: absolute;
+                left: 20%;
+                top: 35%;
             }
         `
 
@@ -32,7 +37,7 @@ const flatButton = (function () {
         module._id++;
         module._style(active);
 
-        return `<button class="flat-button-${module._id}">${content}</button>`;
+        return `<button class="flat-button-${module._id}"><span class="text">${content}</span></button>`;
     };
 
     return {
