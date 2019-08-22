@@ -16,7 +16,7 @@ const inputCollabcode = (function () {
                 padding: 12px 0;
                 border: none;
                 border-bottom: 2px solid rgba(58, 64, 66, .5);
-                outline: none;
+                margin-bottom: 29px;
             }
         `
 
@@ -26,7 +26,7 @@ const inputCollabcode = (function () {
     module.render = () => {
         module._style();
 
-        return `<input class="input-collabcode" type="email"/>`;
+        return ({ type }) => `<input class="input-collabcode" type="${type}"/>`;
 
     };
 

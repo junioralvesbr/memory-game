@@ -17,10 +17,12 @@ const labelCollabcode = (function () {
     }
 
     module.render = () => {
+
         module._style();
 
-        return `<label class="label-collabcode" for=email>E-mail</label>`;
-
+        return ({ type, content }) => `
+            <label class="label-collabcode" for="${type}">${content}</label>
+        `;
     };
 
     return {
