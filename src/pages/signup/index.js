@@ -47,6 +47,8 @@
         type: "password"
     });
 
+    const $pageButton = pageButton.render('Submit');
+
     $root.insertAdjacentHTML("beforeend", $loginButton);
     $root.insertAdjacentHTML("beforeend", $signupButton);
     $root.insertAdjacentHTML("beforeend", $logoWrapper);
@@ -59,5 +61,6 @@
     $root.insertAdjacentHTML("beforeend", $inputPassword);
     $root.insertAdjacentHTML("beforeend", $labelConfirmPassword);
     $root.insertAdjacentHTML("beforeend", $inputConfirmPassword);
+    $root.insertAdjacentHTML("beforeend", $pageButton);
 
 })();
