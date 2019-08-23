@@ -8,8 +8,13 @@ const labelCollabcode = (function () {
 
         $style.textContent = `
             .label-collabcode {
+                display: block;
                 color: rgba(58, 64, 66, .5);
                 font-size: 16px;
+            }
+
+            .input-collabcode + .label-collabcode {
+                margin-top: 30px;
             }
         `;
 

@@ -8,7 +8,7 @@ const pageButton = (function () {
 
         $style.textContent = `
             .page-button {
-                width: 302px;
+                width: 100%;
                 height: 48px;
                 border-radius: 24px;
                 background-color: #f25a70;
@@ -16,16 +16,23 @@ const pageButton = (function () {
                 font-weight: bold;
                 color: #fff;
                 text-transform: uppercase;
+                cursor: pointer;
             }
-        `
+
+            .input-collabcode + .page-button {
+                margin-top: 45px;
+            }
+        `;
 
         $head.insertBefore($style, null);
-    }
+    };
 
     module.render = (content = "Nome do botão") => {
         module._style();
 
-        return `<button class="page-button">${content}</button>`;
+        return `
+            <button class="page-button" type="submit">${content}</button>
+        `;
     };
 
     return {

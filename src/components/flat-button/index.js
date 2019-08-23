@@ -21,6 +21,7 @@ const flatButton = (function () {
                 font-size: 24px;
                 font-weight: bold;
                 text-transform: uppercase;
+                cursor: pointer;
             }
 
             .flat-button-${module._id} > .text {
@@ -28,7 +29,7 @@ const flatButton = (function () {
                 left: 20%;
                 top: 35%;
             }
-        `
+        `;
 
         $head.insertBefore($style, null);
     }
@@ -42,6 +43,6 @@ const flatButton = (function () {
 
     return {
         render: module.render
-    }
+    };
 
 })();
