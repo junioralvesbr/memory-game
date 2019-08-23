@@ -25,7 +25,9 @@ const formSignup = (function () {
         });
 
         const $usernameInput = createInput({
-            type: "text"
+            type: "text",
+            placeholder: "Name-example",
+
         });
 
         const $emailLabel = createLabel({
@@ -34,7 +36,8 @@ const formSignup = (function () {
         });
 
         const $emailInput = createInput({
-            type: "email"
+            type: "email",
+            placeholder: "example@email.com",
         });
 
         const $passwordLabel = createLabel({
@@ -43,7 +46,8 @@ const formSignup = (function () {
         });
 
         const $passwordInput = createInput({
-            type: "password"
+            type: "password",
+            placeholder: "Enter your password"
         });
 
         const $confirmPasswordLabel = createLabel({
@@ -52,7 +56,8 @@ const formSignup = (function () {
         });
 
         const $confirmPasswordInput = createInput({
-            type: "password"
+            type: "password",
+            placeholder: "Confirm your password"
         });
 
         const $pageButton = pageButton.render('Submit');
