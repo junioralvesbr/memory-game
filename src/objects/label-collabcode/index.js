@@ -25,8 +25,8 @@ const labelCollabcode = (function () {
 
         module._style();
 
-        return ({ type, content }) => `
-            <label class="label-collabcode" for="${type}">${content}</label>
+        return ({ name, content }) => `
+            <label class="label-collabcode" for="${name}">${content}</label>
         `;
     };
 
