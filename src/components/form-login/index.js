@@ -43,6 +43,8 @@ const formLogin = (function () {
             placeholder: "******"
         });
 
+        const $linkCollabcode = linkCollabcode.render({ href: "teste", content: "Forget password ?" });
+
         const $pageButton = pageButton.render("login");
 
         return `
@@ -50,6 +52,7 @@ const formLogin = (function () {
             ${$loginInput}
             ${$passwordLabel}
             ${$passwordInput}
+            ${$linkCollabcode}
             ${$pageButton}
         `;
 
