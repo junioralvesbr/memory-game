@@ -43,6 +43,8 @@ const formLogin = (function () {
             placeholder: "******"
         });
 
+        const $eyeCollabcode = eyeCollabcode.render();
+
         const $linkCollabcode = linkCollabcode.render({ href: "teste", content: "Forget password ?" });
 
         const $pageButton = pageButton.render("login");
@@ -52,6 +54,7 @@ const formLogin = (function () {
             ${$loginInput}
             ${$passwordLabel}
             ${$passwordInput}
+            ${$eyeCollabcode}
             ${$linkCollabcode}
             ${$pageButton}
         `;
