@@ -26,11 +26,11 @@ const eyeCollabcode = (function () {
         console.log("aeee!!!!")
     }
 
-    module.render = () => {
+    module.render = ({ attrFor = "" }) => {
         module._style();
 
         return `
-            <label class=eye-collabcode for="password" onClick="eyeCollabcode.handleClick()">Mostrar Senha</label>
+            <label class=eye-collabcode for="${attrFor}" onClick="eyeCollabcode.handleClick()">Mostrar Senha</label>
         `;
     };
 
