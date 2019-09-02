@@ -52,8 +52,15 @@ const inputCollabcode = (function () {
 
     module.active = () => {
         const $buttonActive = document.querySelector('.image');
+        const $inputActive = document.querySelector('input[name="password"]');
 
         $buttonActive.classList.toggle('-active');
+
+        if ($buttonActive.classList.contains('-active')) {
+            $inputActive.type = "text";
+        } else {
+            $inputActive.type = "password";
+        }
     }
 
     module.render = () => {
