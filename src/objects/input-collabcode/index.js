@@ -26,7 +26,7 @@ const inputCollabcode = (function () {
         module._style();
 
         return ({ type, name, placeholder = "" }) => `
-            <input class="input-collabcode" type="${type}" name="${name}" placeholder="${placeholder}"/>
+            <input class="input-collabcode" type="${type}" id="${name}" placeholder="${placeholder}"/>
         `;
 
     };

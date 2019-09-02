@@ -30,7 +30,7 @@ const eyeCollabcode = (function () {
         module._style();
 
         return `
-            <label class=eye-collabcode onClick="eyeCollabcode.handleClick()">Mostrar Senha</label>
+            <label class=eye-collabcode for="password" onClick="eyeCollabcode.handleClick()">Mostrar Senha</label>
         `;
     };
 
