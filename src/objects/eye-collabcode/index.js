@@ -15,22 +15,28 @@ const eyeCollabcode = (function () {
                 background-position: center;
                 width: 24px;
                 height: 15px;
+                cursor: pointer;
             }
         `;
 
         $head.insertBefore($style, null);
     };
 
+    module.handleClick = () => {
+        console.log("aeee!!!!")
+    }
+
     module.render = () => {
         module._style();
 
         return `
-            <label class=eye-collabcode>Mostrar Senha</label>
+            <label class=eye-collabcode onClick="eyeCollabcode.handleClick()">Mostrar Senha</label>
         `;
     };
 
     return {
-        render: module.render
+        render: module.render,
+        handleClick: module.handleClick
     };
 
 })();
