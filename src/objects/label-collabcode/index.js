@@ -13,7 +13,7 @@ const labelCollabcode = (function () {
                 font-size: 16px;
             }
 
-            .input-collabcode + .label-collabcode {
+            .wrapper-input + .label-collabcode {
                 margin-top: 30px;
             }
         `;
