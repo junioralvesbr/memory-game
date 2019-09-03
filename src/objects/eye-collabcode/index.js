@@ -16,6 +16,12 @@ const eyeCollabcode = (function () {
                 width: 24px;
                 height: 15px;
                 cursor: pointer;
+                opacity: 0.5;
+                transition: opacity 200ms linear;
+            }
+
+            .eye-collabcode.-active {
+                opacity: 1
             }
         `;
 
@@ -26,9 +32,13 @@ const eyeCollabcode = (function () {
         const attrFor = this.getAttribute("for")
         const $input = document.querySelector(`#${attrFor}`)
 
-        $input.getAttribute('type') === "text" ?
-            $input.setAttribute('type', 'password') :
+        if ($input.getAttribute('type') === "text") {
+            $input.setAttribute('type', 'password')
+            this.classList.remove('-active')
+        } else {
             $input.setAttribute('type', 'text')
+            this.classList.add('-active');
+        }
 
     }
 
