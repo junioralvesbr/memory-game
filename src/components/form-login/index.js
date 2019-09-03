@@ -39,7 +39,7 @@ const formLogin = (function () {
 
         const $linkCollabcode = linkCollabcode.render({ href: "teste", content: "Forget password ?" });
 
-        const $pageButton = pageButton.render("login");
+        const $pageButton = pageButton.render("login", "login");
 
         return `
             ${$loginLabel}
