@@ -1,10 +1,10 @@
 (function () {
     const { hash } = window.location;
 
-    if (hash === "#/signup") {
-        signup();
-    } else {
-        login();
-    }
+    const paths = [];
 
+    paths[""] = login;
+    paths["#/signup"] = signup;
+
+    paths[hash]();
 })();
