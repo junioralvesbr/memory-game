@@ -51,7 +51,7 @@ const formSignup = (function () {
             placeholder: "********"
         });
 
-        const $pageButton = pageButton.render('Submit');
+        const $pageButton = pageButton.render('Submit', 'login');
 
         return `
             ${$usernameLabel}
