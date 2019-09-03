@@ -1,4 +1,4 @@
-(function () {
+const game = (function () {
     const $root = document.querySelector('#root');
 
     // Cria a barra de pontos com o metodo create
@@ -40,4 +40,4 @@
     $root.insertAdjacentHTML("afterbegin", $pointBar);
     $root.insertAdjacentHTML("beforeend", $layerStart);
 
-})();
+});
