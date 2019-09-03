@@ -27,16 +27,22 @@ const pageButton = (function () {
         $head.insertBefore($style, null);
     };
 
-    module.render = (content = "Nome do botão") => {
+    module.handleClick = (event, path) => {
+        event.preventDefault();
+        window.location.hash = `/${path}`;
+    }
+
+    module.render = (content = "Nome do botão", path = "") => {
         module._style();
 
         return `
-            <button class="page-button" type="submit">${content}</button>
+            <button class="page-button" type="submit" onClick="pageButton.handleClick(event, '${path}')">${content}</button>
         `;
     };
 
     return {
-        render: module.render
+        render: module.render,
+        handleClick: module.handleClick
     };
 
 })();

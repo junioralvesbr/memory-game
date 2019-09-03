@@ -16,51 +16,42 @@ const formSignup = (function () {
     };
 
     module._chilldren = () => {
-        const createLabel = labelCollabcode.render();
         const createInput = inputCollabcode.render();
 
-        const $usernameLabel = createLabel({
-            type: "text",
-            content: "Username"
-        });
+        const $usernameLabel = labelCollabcode.render("Username");
 
         const $usernameInput = createInput({
             type: "text",
+            id: "inputUsername",
             placeholder: "Name-example",
 
         });
 
-        const $emailLabel = createLabel({
-            type: "email",
-            content: "E-mail"
-        });
+        const $emailLabel = labelCollabcode.render("E-mail");
 
         const $emailInput = createInput({
             type: "email",
-            // placeholder: "example@email.com",
+            id: "emailInput",
+            placeholder: "example@email.com",
         });
 
-        const $passwordLabel = createLabel({
-            type: "password",
-            content: "Password"
-        });
+        const $passwordLabel = labelCollabcode.render("Password")
 
         const $passwordInput = createInput({
             type: "password",
+            id: "inputPassword",
             placeholder: "********"
         });
 
-        const $confirmPasswordLabel = createLabel({
-            type: "password",
-            content: "Confirm Password"
-        });
+        const $confirmPasswordLabel = labelCollabcode.render("Confirm Password")
 
         const $confirmPasswordInput = createInput({
             type: "password",
+            id: "confirmPassword",
             placeholder: "********"
         });
 
-        const $pageButton = pageButton.render('Submit');
+        const $pageButton = pageButton.render('Submit', 'login');
 
         return `
             ${$usernameLabel}

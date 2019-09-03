@@ -21,13 +21,14 @@ const labelCollabcode = (function () {
         $head.insertBefore($style, null);
     }
 
-    module.render = () => {
+    module.render = (content) => {
 
         module._style();
 
-        return ({ name, content }) => `
-            <label class="label-collabcode" for="${name}">${content}</label>
+        return `
+            <label class="label-collabcode">${content}</label>
         `;
+
     };
 
     return {
