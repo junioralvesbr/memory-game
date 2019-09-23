@@ -20,6 +20,12 @@ const backButton = (function () {
                 font-weight: bold;
                 text-decoration: underline;
                 letter-spacing: 0.2em;
+                transition: all 300ms linear;
+            }
+
+            .back-button.-disable {
+                opacity: 0;
+                pointer-events: none;
             }
         `;
 
