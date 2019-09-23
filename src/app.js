@@ -17,4 +17,15 @@
     //     paths["#/404"]();
     // }
 
+
+    // Fução aplicado ao navegador que utiliza o reload ao trocar o hash da pagina
+    window.onhashchange = () => {
+        location.reload(true);
+    };
+
+     // Outra forma de fazer o reload
+    //  window.addEventListener('hashchange', () => {
+    //      location.reload(true);
+    //  });
+    
 })();

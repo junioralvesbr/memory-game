@@ -33,7 +33,6 @@ const backButton = (function () {
     };
 
     module.handleClick = path => {
-        console.log(path);
         window.location.hash = path;
         window.location.reload(true);
     }
