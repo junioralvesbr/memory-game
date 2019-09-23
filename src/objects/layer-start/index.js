@@ -23,20 +23,22 @@ const layerStart = (function () {
     module.render = content => {
         const $transparentLayer = transparentLayer.render();
         const $gameButton = gameButton.render(content);
+        const $backButton = backButton.render("Logout", "login");
 
         return `
             <div class="layer-start" onclick="layerStart.handleClick(this)" ontransitionend="layerStart.handleTransitionEnd(event, this)">
-                ${$transparentLayer};
-                ${$gameButton};
+                ${$transparentLayer}
+                ${$gameButton}
+                ${$backButton}
             </div>
         `
-    }
+    };
 
     // Retorna para o pages.js
     return {
         render: module.render,
         handleClick: module.handleClick,
         handleTransitionEnd: module.handleTransitionEnd
-    }
+    };
 
 })();
