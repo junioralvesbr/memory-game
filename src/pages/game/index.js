@@ -27,14 +27,34 @@ const game = (function () {
         alt: "livro de programação JAVA"
     });
 
-    $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardC);
-    $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJS);
-    $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardPHP);
-    $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJava);
-    $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJS);
-    $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardC);
-    $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJava);
-    $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardPHP);
+    function rand0n() {
+        return (Math.round(Math.random())-0.5);
+    };
+
+    const insertCard = [];
+    insertCard[0] = $memoryCardC;
+    insertCard[1] = $memoryCardJS;
+    insertCard[2] = $memoryCardJava;
+    insertCard[3] = $memoryCardPHP;
+    insertCard[4] = $memoryCardC;
+    insertCard[5] = $memoryCardJS;
+    insertCard[6] = $memoryCardJava;
+    insertCard[7] = $memoryCardPHP;
+
+    insertCard.sort(rand0n);
+
+    insertCard.forEach($element => {
+        $cardsWrapper.insertAdjacentHTML("beforeend", $element);
+    });
+
+    // $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardC);
+    // $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJS);
+    // $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardPHP);
+    // $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJava);
+    // $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJS);
+    // $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardC);
+    // $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJava);
+    // $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardPHP);
 
     $root.insertAdjacentElement("beforeend", $cardsWrapper);
     $root.insertAdjacentHTML("afterbegin", $pointBar);
