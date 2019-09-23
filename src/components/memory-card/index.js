@@ -96,6 +96,14 @@ const memoryCard = (function () {
         }
     }
 
+    module._layerEnd = () => {
+        const $layerEnd = document.querySelector('.layer-end');
+
+        if (store.score === 4) {
+            $layerEnd.classList.add('-active')
+        };
+    }
+
     module._checkSure = () => {
         if (qtdActiveMemoryCard === 1) {
             const $activeMemoryCards = document.querySelectorAll('.memory-card.-active');
@@ -105,6 +113,8 @@ const memoryCard = (function () {
                 $activeMemoryCards[1].querySelector('.-front .icon').getAttribute('src')) {
 
                 store.score++;
+                module._layerEnd();
+                
                 document.querySelector('.point-bar > .number').textContent = store.score;
 
                 $activeMemoryCards.forEach($memoryCard => {

@@ -6,7 +6,8 @@ const game = (function () {
     const $cardsWrapper = createCardsWrapper();
 
     // cria o layer e o botão chmando o laye Start com o metodo render.
-    const $layerStart = layerStart.render("Vai");
+    const $layerStart = layerStart.render("Start");
+    const $layerEnd = layerEnd.render();
 
     const createMemoryCard = memoryCard.create();
 
@@ -59,5 +60,6 @@ const game = (function () {
     $root.insertAdjacentElement("beforeend", $cardsWrapper);
     $root.insertAdjacentHTML("afterbegin", $pointBar);
     $root.insertAdjacentHTML("beforeend", $layerStart);
+    $root.insertAdjacentHTML("beforeend", $layerEnd);
 
 });
