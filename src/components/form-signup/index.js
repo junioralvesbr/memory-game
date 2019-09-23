@@ -9,6 +9,14 @@ const formSignup = (function () {
         $style.textContent = `
             .form-signup {
                 padding: 0 35px 40px;
+                width: 40vw;
+                margin: 0 auto;
+            }
+
+            @media ( max-width: 1200px) {
+                .form-login {
+                    width: 90vw;
+                }
             }
         `;
 

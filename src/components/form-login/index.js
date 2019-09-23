@@ -9,8 +9,16 @@ const formLogin = (function () {
         $style.textContent = `
             .form-login {
                 padding: 0 34px 40px;
+                width: 40vw;
+                margin: 0 auto;
             }
-        `
+
+            @media ( max-width: 1200px) {
+                .form-login {
+                    width: 90vw;
+                }
+            }
+        `;
 
         $head.insertBefore($style, null);
 

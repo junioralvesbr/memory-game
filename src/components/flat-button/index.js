@@ -14,9 +14,10 @@ const flatButton = (function () {
         $style.textContent = `
             .flat-button-${module._id} {
                 position: relative;
+                left: 25%;
                 background-color: ${active ? "#f25a70" : "#eae6da"};
                 color: ${active ? "#fff" : "#fffcee"};
-                width: 50%;
+                width: 25%;
                 height: 176px;
                 font-size: 24px;
                 font-weight: bold;
@@ -28,6 +29,13 @@ const flatButton = (function () {
                 position: absolute;
                 left: 20%;
                 top: 35%;
+            }
+
+            @media ( max-width: 1200px) {
+                .flat-button-${module._id} {
+                    width: 50%;
+                    left: 0;
+                }
             }
         `;
 
